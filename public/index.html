@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selo Dinâmico LOTEP - Modularizado</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+    <!-- Folha de estilos isolada -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div id="app-config" data-selo-url="{{SELO_URL}}" aria-hidden="true" class="visually-hidden"></div>
+
+    <nav class="a11y-bar" aria-label="Barra de Acessibilidade">
+        <button id="contrast-toggle" class="btn-contrast" aria-pressed="false" title="Alternar Modo de Alto Contraste">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M12 2v20A10 10 0 1 0 12 2Z" />
+            </svg>
+            <span id="contrast-btn-text">Alto Contraste</span>
+        </button>
+    </nav>
+
+    <header role="banner">
+        <h1>Demonstrativo do Selo LOTEP</h1>
+    </header>
+
+    <main role="main">
+        <section class="panel controls" aria-labelledby="controls-title">
+            <h2 id="controls-title" class="visually-hidden">Controles de Visualização do Selo</h2>
+
+            <div class="control-group">
+                <label for="style-switch">Formato do Selo</label>
+                <select id="style-switch" aria-controls="selo-iframe" title="Alterar o formato do selo">
+                    <option value="footer">Rodapé Completo (Footer)</option>
+                    <option value="badge">Selo Compacto (Badge)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="theme-switch">Tema Interno do Selo</label>
+                <select id="theme-switch" aria-controls="selo-iframe" title="Alterar o tema de cores do selo interno">
+                    <option value="black">Tema Escuro (Black)</option>
+                    <option value="white">Tema Claro (White)</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="panel iframe-wrapper" aria-labelledby="iframe-title">
+            <h2 id="iframe-title" class="label-wrapper">Área Segura do Selo</h2>
+            <iframe id="selo-iframe" src="about:blank" title="Selo Oficial Dinâmico de Operador Autorizado LOTEP"
+                width="100%" height="550" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </section>
+
+        <div id="a11y-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>Integração oficial desenvolvida sob o mais alto padrão corporativo.</p>
+    </footer>
+
+    <!-- Scripts modulares importados separadamente -->
+    <script src="/main.js"></script>
+    <script src="/iframe-control.js"></script>
+</body>
+
+</html>
