@@ -17,6 +17,14 @@ app.get("/", async (c) => {
   return c.html(finalHtml);
 });
 
+// Rota estática isolada para servir a lógica de UI do navegador
+app.get("/main.js", async (c) => {
+  const jsContent = await Deno.readTextFile("./src/main.js");
+  return c.text(jsContent, 200, {
+    "Content-Type": "application/javascript",
+  });
+});
+
 console.info(
   "🚀 Servidor Web LOTEP rodando limpo e desacoplado na porta 8000!",
 );
