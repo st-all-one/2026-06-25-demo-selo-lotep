@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selo Dinâmico LOTEP (Clean Architecture)</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+      margin: 0; padding: 0; background-color: #f8fafc; color: #334155; 
+    }
+    .container { 
+      max-width: 800px; margin: 60px auto; padding: 40px; 
+      background: #ffffff; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); 
+      border-radius: 12px; 
+    }
+    h1 { color: #0f172a; font-size: 26px; margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    p { line-height: 1.7; color: #475569; font-size: 16px; }
+    .iframe-wrapper { 
+      margin-top: 35px; border: 2px dashed #cbd5e1; 
+      padding: 20px; background: #f8fafc; border-radius: 8px; 
+    }
+    .label { 
+      text-align: center; font-size: 12px; color: #64748b; 
+      margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; 
+    }
+    .footer { text-align: center; margin-top: 30px; font-size: 13px; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛡️ Integração LOTEP: Arquitetura Limpa</h1>
+    <p>Esta é uma demonstração construída sobre os modernos padrões do <b>Deno 2.0+</b>.</p>
+    <p>A arquitetura divide claramente responsabilidades: o <b>index.html</b> cuida da apresentação visual, o <b>server.ts</b> orquestra a comunicação web e gerencia o cache, enquanto o <b>main.ts</b> isola totalmente a lógica criptográfica usando a API nativa Web Crypto.</p>
+    
+    <div class="iframe-wrapper">
+      <div class="label">Área Restrita do Selo</div>
+      
+      <!-- O placeholder {{SELO_URL}} será injetado de forma transparente pelo backend (server.ts) -->
+      <iframe src="{{SELO_URL}}" width="100%" height="550" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+      
+    </div>
+  </div>
+  <div class="footer">Projeto de Referência Didática - Nunca compartilhe a sua Client Secret no frontend!</div>
+</body>
+</html>
