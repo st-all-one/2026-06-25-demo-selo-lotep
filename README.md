@@ -18,8 +18,6 @@ Integração oficial desenvolvida sob o mais alto padrão corporativo, isolando 
 - **`public/main.js`**: Scripts de comportamento genérico do site (ex: Botão de Alto Contraste persistente).
 - **`public/iframe-control.js`**: O maestro específico do Selo: gerencia a interceptação dos parâmetros (`theme`, `style`) e os repassa dinamicamente para o iframe sem ferir o cache.
 
-*(Nota: Arquivos que sobraram soltos na pasta `/src` além de `cache.ts` e `main.ts`, como um antigo `index.html` ou `main.js`, podem ser seguramente deletados, assim como na raiz do projeto).*
-
 ## Como rodar e testar
 
 1. Tenha o [Deno](https://deno.land/) (2.0+) instalado.
@@ -27,7 +25,7 @@ Integração oficial desenvolvida sob o mais alto padrão corporativo, isolando 
 3. Inicie o servidor. Lembre-se de reiniciar caso o processo já estivesse rodando:
 
 ```bash
-deno run --env --allow-net --allow-read server.ts
+deno task start
 ```
 
 4. Acesse `http://localhost:8000` no navegador.
