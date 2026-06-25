@@ -22,13 +22,13 @@ export async function getCachedSeloUrl(): Promise<string> {
   );
 
   // Leitura segura do ambiente
-  const baseUrl = Deno.env.get("SELO_OPERADOR_LOTEPBASE_URL") ??
+  const baseUrl = Deno.env.get("SELO_OPERADOR_LOTEP_BASE_URL") ??
     "https://lotep.pb.gov.br";
-  const cnpj = Deno.env.get("SELO_OPERADOR_LOTEPCNPJ") ?? "00000000000000";
-  const secret = Deno.env.get("SELO_OPERADOR_LOTEPSECRET") ??
+  const cnpj = Deno.env.get("SELO_OPERADOR_LOTEP_CNPJ") ?? "00000000000000";
+  const secret = Deno.env.get("SELO_OPERADOR_LOTEP_SECRET") ??
     "chave_padrao_invalida";
-  const style = Deno.env.get("SELO_OPERADOR_LOTEPSTYLE") ?? "footer";
-  const theme = Deno.env.get("SELO_OPERADOR_LOTEPTHEME") ?? "black";
+  const style = Deno.env.get("SELO_OPERADOR_LOTEP_STYLE") ?? "footer";
+  const theme = Deno.env.get("SELO_OPERADOR_LOTEP_THEME") ?? "black";
 
   const timestamp = Math.floor(now / 1000);
 
